@@ -1,44 +1,40 @@
-// Components/Banner.js
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 
 const Banner = () => {
   return (
-    <View style={estilos.contenedor}>
-      <Image
-          source={require('../assets/login-pana.png')}
-          style={estyle.imagen}/>
-        <Text> WELCOME </Text>
-         </View>
-    
+    <View style={styles.container}>
+      <View style={styles.logo}>
+        <Image
+          source={require('../assets/login-pana.png')} 
+          style={styles.image}
+          resizeMode="contain" 
+        />
+      </View>
+    </View>
   );
 };
 
-const estilos = StyleSheet.create({
-  contenedor: {
-    flex: 1,
+const styles = StyleSheet.create({
+  container: {
+    flex: 0.9,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgb(140, 143, 225)', // Fondo azul claro para coincidir con el diseño
-  
+    backgroundColor: '#F1F3F6',
+    paddingTop: 30,
   },
-  imagen: {
-    width: 170,
-    height: 170,
-    borderRadius: 100, // Forma circular
-    backgroundColor: '#FFFFFF', // Fondo blanco para el círculo
+  logo: {
+    width: 200,
+    height: 200,
+    borderRadius: 100, 
+    backgroundColor: '#FFFFFF', 
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 10,
-    elevation: 5, // Sombra para Android
-    marginTop: 80,
+    overflow: 'hidden', 
   },
-  imagen: {
-    width: '90%',
-    height: '100%',
+  image: {
+    width: 230,
+    height: 250,
   },
 });
 
